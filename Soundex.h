@@ -9,7 +9,7 @@ static char charList[26] = {'0', '1', '2', '3', '0', '1', '2', '0', '0', '2', '2
 
 char getSoundexCode(char c) {
     c = toupper(c);
-    if((c >= 'A') && (c <= 'Z')))
+    if((c >= 'A') && (c <= 'Z'))
     {
         return charList[c - 'A'];
     }
