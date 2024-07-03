@@ -9,7 +9,8 @@ static char charList[26] = {'0', '1', '2', '3', '0', '1', '2', '0', '0', '2', '2
 
 char getSoundexCode(char c) {
     c = toupper(c);
-    if((c >= 'A') && (c <= 'Z'))
+    boolean IsAlphabet = (c >= 'A') && (c <= 'Z');
+    if(IsAlphabet)
     {
         return charList[c - 'A'];
     }
@@ -25,6 +26,7 @@ void generateSoundex(const char *name, char *soundex) {
     soundex[1] = '0';
     soundex[2] = '0';
     soundex[3] = '0';
+    soundex[4] = '\0';
     int sIndex = 1;
 
     for (int i = 1; i < len && sIndex < 4; i++) {
