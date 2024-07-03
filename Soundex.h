@@ -5,7 +5,6 @@
 #include <ctype.h>
 #include <string.h>
 
-static char elementList[2] = {'0', '0'};
 static char charList[26] = {'0', '1', '2', '3', '0', '1', '2', '0', '0', '2', '2', '4', '5', '5', '0', '1', '2', '6', '2', '3', '0', '0', '0', '2', '0', '2'};
 
 
