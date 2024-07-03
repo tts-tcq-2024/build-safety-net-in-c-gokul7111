@@ -9,30 +9,19 @@ static char charList[26] = {'0', '1', '2', '3', '0', '1', '2', '0', '0', '2', '2
 
 char getSoundexCode(char c) {
     c = toupper(c);
-    bool IsAlphabet = ((c >= 'A') && (c <= 'Z'));
-    if(IsAlphabet)
-    {
-        return charList[c - 'A'];
-    }
-    else
-    {
-        return '0';
-    }
+    return ((c >= 'A') && (c <= 'Z')) ? charList[c - 'A'] : '0';
 }
 
 void generateSoundex(const char *name, char *soundex) {
     int len = strlen(name);
     soundex[0] = toupper(name[0]);
-    soundex[1] = '0';
-    soundex[2] = '0';
-    soundex[3] = '0';
+    soundex[1] = soundex[2] = soundex[3] = '0';
     soundex[4] = '\0';
     int sIndex = 1;
 
     for (int i = 1; i < len && sIndex < 4; i++) {
         char code = getSoundexCode(name[i]);
-        bool IsCodeValid = (code != '0' && code != soundex[sIndex - 1]);
-        if (IsCodeValid) {
+        if (code != '0' && code != soundex[sIndex - 1]) {
             soundex[sIndex++] = code;
         }
     }
