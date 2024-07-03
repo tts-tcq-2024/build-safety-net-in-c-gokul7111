@@ -5,11 +5,13 @@
 #include <ctype.h>
 #include <string.h>
 
+static char elementList[2] = {'0', '0'};
 static char charList[26] = {'0', '1', '2', '3', '0', '1', '2', '0', '0', '2', '2', '4', '5', '5', '0', '1', '2', '6', '2', '3', '0', '0', '0', '2', '0', '2'};
+
 
 char getSoundexCode(char c) {
     c = toupper(c);
-    return ((c >= 'A') && (c <= 'Z')) ? charList[c - 'A'] : '0';
+    return charList[c - 'A'];
 }
 
 void generateSoundex(const char *name, char *soundex) {
@@ -19,7 +21,7 @@ void generateSoundex(const char *name, char *soundex) {
     soundex[4] = '\0';
     int sIndex = 1;
 
-    for (int i = 1; name[i] != '\0' && sIndex < 4; i++) {
+   for (int i = 1, sIndex = 1; name[i] != '\0' && sIndex < 4; i++) {
         char code = getSoundexCode(name[i]);
         if (code != '0' && code != soundex[sIndex - 1]) {
             soundex[sIndex++] = code;
