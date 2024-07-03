@@ -22,6 +22,9 @@ char getSoundexCode(char c) {
 void generateSoundex(const char *name, char *soundex) {
     int len = strlen(name);
     soundex[0] = toupper(name[0]);
+    soundex[1] = '0';
+    soundex[2] = '0';
+    soundex[3] = '0';
     int sIndex = 1;
 
     for (int i = 1; i < len && sIndex < 4; i++) {
@@ -29,10 +32,6 @@ void generateSoundex(const char *name, char *soundex) {
         if (code != '0' && code != soundex[sIndex - 1]) {
             soundex[sIndex++] = code;
         }
-    }
-
-    while (sIndex < 4) {
-        soundex[sIndex++] = '0';
     }
 
     soundex[4] = '\0';
