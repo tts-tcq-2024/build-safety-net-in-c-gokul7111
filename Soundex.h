@@ -28,7 +28,7 @@ bool countinueInteration(char c, int index)
 
 void generateSoundex(const char *name, char *soundex) {
     int len = strlen(name);
-    soundex[0] = toupper(name[0]);
+    soundex[0] = int(IsAlphabet(toupper(name[0]))*toupper(name[0]) + (!IsAlphabet(toupper(name[0]))*'0'));
     soundex[1] = soundex[2] = soundex[3] = '0';
     soundex[4] = '\0';
 
