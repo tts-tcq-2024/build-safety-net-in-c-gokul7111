@@ -9,11 +9,11 @@ static char charList[26] = {'0', '1', '2', '3', '0', '1', '2', '0', '0', '2', '2
 
 char IsAlphabet(char c)
 {
-    return ((c >= 'A') && (c <= 'Z'))
+    return ((c >= 'A') && (c <= 'Z'));
 }
 
 char getSoundexCode(char c) {
-    c = IsAlphabet(c)*Istoupper(c) + (!IsAlphabet(c)*'A');
+    c = IsAlphabet(c)*toupper(c) + (!IsAlphabet(c)*'A');
     return charList[c - 'A'];
 }
 
