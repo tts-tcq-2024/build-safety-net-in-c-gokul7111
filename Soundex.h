@@ -17,8 +17,8 @@ bool IsAlphabet(char c)
 }
 
 char getSoundexCode(char c) {
-    c = IsAlphabet(c)*toupper(c) + (!IsAlphabet(c)*'A');
-    return charList[c - 'A'];
+    char code = int(IsAlphabet(toupper(c))*toupper(c) + (!IsAlphabet(toupper(c))*'A'));
+    return charList[code - 'A'];
 }
 
 bool countinueInteration(char c, int index)
