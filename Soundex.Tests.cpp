@@ -14,3 +14,24 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_02) {
   generateSoundex("gokul", soundex);
   ASSERT_EQ(strcmp(soundex,"G240"), 0);
 }
+
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_03) {
+ //%%% - Non alphabet testing
+  char soundex[5];
+  generateSoundex("%%%", soundex);
+  ASSERT_EQ(strcmp(soundex,"0000"), 0);
+}
+
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_04) {
+ //Empty string is provided
+  char soundex[5];
+  generateSoundex("", soundex);
+  ASSERT_EQ(strcmp(soundex,"0000"), 0);
+}
+
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_05) {
+ //Tymczak
+  char soundex[5];
+  generateSoundex("Tymczak", soundex);
+  ASSERT_EQ(strcmp(soundex,"T522"), 0);
+}
