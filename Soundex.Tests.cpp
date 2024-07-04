@@ -35,3 +35,9 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_05) {
   generateSoundex("Tymczak", soundex);
   ASSERT_EQ(strcmp(soundex,"T520"), 0);
 }
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_06) {
+ //Alexander
+  char soundex[5];
+  generateSoundex("Alexander", soundex);
+  ASSERT_EQ(strcmp(soundex,"T520"), 0);
+}
