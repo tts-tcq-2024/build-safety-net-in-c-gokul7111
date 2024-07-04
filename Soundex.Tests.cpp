@@ -39,5 +39,5 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_06) {
  //Alexander
   char soundex[5];
   generateSoundex("Alexander", soundex);
-  ASSERT_EQ(strcmp(soundex,"T520"), 0);
+  ASSERT_EQ(strcmp(soundex,"A425"), 0);
 }
