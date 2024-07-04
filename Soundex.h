@@ -21,13 +21,18 @@ char getSoundexCode(char c) {
     return charList[c - 'A'];
 }
 
+bool countinueInteration(char c, int index)
+{
+     return (c != '\0' && index < 4);
+}
+
 void generateSoundex(const char *name, char *soundex) {
     int len = strlen(name);
     soundex[0] = toupper(name[0]);
     soundex[1] = soundex[2] = soundex[3] = '0';
     soundex[4] = '\0';
 
-   for (int i = 1, sIndex = 1; name[i] != '\0' && sIndex < 4; i++) {
+   for (int i = 1, sIndex = 1; countinueInteration(name[i], sIndex); i++) {
         char code = getSoundexCode(name[i]);
         if (IsCodeValid(code, soundex[sIndex - 1] )) {
             soundex[sIndex++] = code;
