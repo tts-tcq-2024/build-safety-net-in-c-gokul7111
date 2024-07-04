@@ -41,3 +41,10 @@ TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_06) {
   generateSoundex("Alexander", soundex);
   ASSERT_EQ(strcmp(soundex,"A425"), 0);
 }
+
+TEST(SoudexTestsuite, ReplacesConsonantsWithAppropriateDigits_07) {
+ // ///
+  char soundex[5];
+  generateSoundex("///", soundex);
+  ASSERT_EQ(strcmp(soundex,"0000"), 0);
+}
